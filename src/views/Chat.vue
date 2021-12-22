@@ -5,15 +5,11 @@
     </header>
     <main>
       <ul>
-        <li v-for="(item, index) in data" :key="index" :class="[item.user, setAlign(item.type, item.user), item.type]">
+        <li v-for="(item, index) in data" :key="index" :class="[setAlign(item.type, item.user), item.type]">
           <template v-if="item.type === 'message'">
             <div class="chat">
-              <span class="message">
-                {{ item.message }}
-                <span class="datetime">
-                  {{ Day.getToDate(item.datetime, 'HH:mm') }}
-                </span>
-              </span>
+              <div class="message" v-html="item.message" :data-datetime="Day.getToDate(item.datetime, 'HH:mm')">
+              </div>
             </div>
           </template>
           <template v-else-if="item.type === 'dayLine'">
@@ -44,7 +40,7 @@ export default {
     setAlign (type, sender) {
       switch (type) {
         case 'message':
-          if (sender === 'Louis') {
+          if (sender === '나') {
             return 'right'
           } else {
             return 'left'
@@ -69,6 +65,8 @@ header {
   background-color: #AFC0CF;
 }
 ul {
+  max-height: calc(100vh - 100px);
+  overflow-y: scroll;
   padding: 9px;
 }
 li {
@@ -78,7 +76,7 @@ li {
   }
   &.right {
     text-align: right;
-    .datetime {
+    .chat .message::after {
       left: -34px;
     }
   }
@@ -87,7 +85,7 @@ li {
     .chat .message {
       background-color: #fff;
     }
-    .datetime {
+    .chat .message::after {
       right: -34px;
     }
   }
@@ -96,9 +94,12 @@ li {
   }
   .chat {
     color: #282A2B;
+
     .message {
+      white-space:pre;
       position: relative;
       display: inline-block;
+      text-align: initial;
       font-size: 15px;
       margin-top: 3.5px;
       margin-bottom: 3.5px;
@@ -106,9 +107,10 @@ li {
       padding: 8px 12px;
       background-color: #FAE64C;
 
-      .datetime {
-        width: 30px;
+      &::after {
         position: absolute;
+        content: attr(data-datetime);
+        width: 30px;
         bottom: 0;
         color: rgba(#000, .5);
         font-size: 12px;
