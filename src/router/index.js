@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Main from '../components/Layout.vue'
+import Home from '../components/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -8,8 +8,8 @@ const routes = [
   {
     path: '/',
     redirect: '/chat',
-    name: 'Main',
-    component: Main
+    name: 'Home',
+    component: Home
   },
   {
     path: '/chat',
