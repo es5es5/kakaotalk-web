@@ -1,9 +1,16 @@
 <template>
-  <div id="header" :class="[scrolling ? 'scrolling' : '', _propTheme !== '' ? _propTheme : theme]">
+  <div id="header">
     <div class="header_wrap">
-      <img src="@/assets/images/back.svg" alt="svg" class="back">
-      <span class="title">{{ 'Louis' }}</span>
-      <img src="@/assets/images/search.svg" alt="svg" class="back">
+      <div>
+        <img src="@/assets/images/back.svg" alt="svg" class="icon back">
+      </div>
+      <div>
+        <span class="title">{{ 'Louis' }}</span>
+      </div>
+      <div>
+        <img src="@/assets/images/search.svg" alt="svg" class="icon search">
+        <img src="@/assets/images/menu.svg" alt="svg" class="icon menu">
+      </div>
     </div>
   </div>
 </template>
@@ -20,16 +27,33 @@ export default {
 }
 
 .header_wrap {
-  padding: 10px 20px;
+  line-height: 48px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin: 0 auto;
+
+  div {
+    width: 60px;
+  }
 }
 
 .title {
+  display: inline-block;
+  text-align: center;
   font-weight: bold;
   font-size: 18px;
+}
+
+.icon {
+  height: 18px;
+  vertical-align: middle;
+
+  width: 20px;
+  &.menu {
+    margin-left: 20px;
+  }
 }
 
 .heading {
