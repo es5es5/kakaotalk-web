@@ -1,8 +1,6 @@
 <template>
   <div id="chat">
-    <header>
-      Header
-    </header>
+    <Header></Header>
     <main>
       <ul>
         <li v-for="(item, index) in data" :key="index" :class="[setAlign(item.type, item.user), item.type]">
@@ -24,12 +22,16 @@
 </template>
 
 <script>
+import Header from '@/components/Header'
 import Chat from '@/assets/data/chat.js'
 
 export default {
   name: 'Chat',
   created () {
     console.log()
+  },
+  components: {
+    Header
   },
   data () {
     return {
@@ -40,7 +42,7 @@ export default {
     setAlign (type, sender) {
       switch (type) {
         case 'message':
-          if (sender === '나') {
+          if (sender === '조항민') {
             return 'right'
           } else {
             return 'left'
@@ -58,6 +60,11 @@ export default {
 <style lang="scss" scoped>
 header {
   height: 46px;
+
+  .back {
+    display: inline-block;
+    line-height: 46px;
+  }
 }
 
 #chat {
