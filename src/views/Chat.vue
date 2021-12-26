@@ -18,11 +18,13 @@
         </li>
       </ul>
     </main>
+    <TextBox></TextBox>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header'
+import TextBox from '@/components/TextBox'
 import Chat from '@/assets/data/chat.js'
 
 export default {
@@ -31,7 +33,8 @@ export default {
     console.log()
   },
   components: {
-    Header
+    Header,
+    TextBox,
   },
   data () {
     return {
@@ -42,7 +45,7 @@ export default {
     setAlign (type, sender) {
       switch (type) {
         case 'message':
-          if (sender === '조항민') {
+          if (sender === '나') {
             return 'right'
           } else {
             return 'left'
