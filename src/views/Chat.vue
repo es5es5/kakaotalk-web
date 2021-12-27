@@ -89,6 +89,12 @@ li {
     .chat .message::after {
       left: -34px;
     }
+    .chat .message::before {
+      position: absolute;
+      content: url('../assets/images/tail_yellow.svg');
+      top: -1px;
+      right: -4px;
+    }
   }
   &.left {
     text-align: left;
@@ -97,6 +103,12 @@ li {
     }
     .chat .message::after {
       right: -34px;
+    }
+    .chat .message::before {
+      position: absolute;
+      content: url('../assets/images/tail_white.svg');
+      top: -1px;
+      left: -4px;
     }
   }
   &.center {
