@@ -26,12 +26,14 @@
 import Header from '@/components/Header'
 import TextBox from '@/components/TextBox'
 import Chat from '@/assets/data/chat.js'
+import Parser from '@/components/Parser'
 
 export default {
   name: 'Chat',
   created () {
     console.log()
   },
+  mixins: [Parser],
   components: {
     Header,
     TextBox,
