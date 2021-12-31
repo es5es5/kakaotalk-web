@@ -77,7 +77,7 @@ header {
   background-color: #AFC0CF;
 }
 ul {
-  max-height: calc(100vh - 117px);
+  max-height: calc(100vh - 120px);
   overflow-y: scroll;
   padding: 9px;
 }
@@ -97,6 +97,11 @@ li {
       top: -1px;
       right: -4px;
     }
+    +.right {
+      .chat .message::before {
+        content: '';
+      }
+    }
   }
   &.left {
     text-align: left;
@@ -111,6 +116,12 @@ li {
       content: url('../assets/images/tail_white.svg');
       top: -1px;
       left: -4px;
+    }
+
+    +.left {
+      .chat .message::before {
+        content: '';
+      }
     }
   }
   &.center {
@@ -154,5 +165,4 @@ li {
     background-color: rgba(#000, .15);
   }
 }
-
 </style>
