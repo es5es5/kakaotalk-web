@@ -77,7 +77,7 @@ header {
   background-color: #AFC0CF;
 }
 ul {
-  max-height: calc(100vh - 100px);
+  max-height: calc(100vh - 117px);
   overflow-y: scroll;
   padding: 9px;
 }
