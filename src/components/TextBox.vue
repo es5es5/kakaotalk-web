@@ -3,6 +3,8 @@
     <img src="@/assets/images/media.svg" alt="media" class="media">
     <input type="text" class="inputText">
     <img src="@/assets/images/homeBar.svg" alt="homeBar" class="homeBar">
+    <img src="@/assets/images/emoji.svg" alt="emoji" class="emoji">
+    <img src="@/assets/images/sharp.svg" alt="sharp" class="sharp">
   </div>
 </template>
 
@@ -47,5 +49,17 @@ export default {
   position: absolute;
   bottom: 8px;
   left: calc(50% - 74px);
+}
+
+.emoji {
+  position: absolute;
+  top: 11px;
+  right: 50px;
+}
+
+.sharp {
+  position: absolute;
+  top: 13px;
+  right: 25px;
 }
 </style>
