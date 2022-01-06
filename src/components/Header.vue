@@ -54,6 +54,10 @@ export default {
   &.menu {
     margin-left: 20px;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .heading {

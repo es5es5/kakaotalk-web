@@ -131,7 +131,8 @@ li {
     color: #282A2B;
 
     .message {
-      white-space:pre;
+      max-width: 75%;
+      // white-space:pre;
       position: relative;
       display: inline-block;
       text-align: initial;
