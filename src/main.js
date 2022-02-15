@@ -4,6 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import './plugins/day'
+import './assets/js/firebase'
 
 import COMMON from '@/../colony-vue/src/js/common'
 
